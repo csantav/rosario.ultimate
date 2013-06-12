@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= eletant-press
 //= require_tree .
