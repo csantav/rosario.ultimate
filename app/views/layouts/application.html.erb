@@ -57,12 +57,16 @@
     <div class="clear"></div>
   </div>
 </div>
-
+<div class="flash" style='margin-left: 50%'>
+     <p class="notice"><%= notice %></p>
+     <p class="alert"><%= alert %></p>
+ </div>
+ 
 <%= content_for?(:content) ? yield(:content) : yield %>
 
 <footer>
     <p class="tagline_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="tagline_right">Design by <a href="http://www.priteshgupta.com/" title="Pritesh Gupta" target="_blank" >PriteshGupta.com</a></p>
+    <!-- <p class="tagline_right">Design by <a href="http://www.priteshgupta.com/" title="Pritesh Gupta" target="_blank" >PriteshGupta.com</a></p> -->
     <br class="clear" />
   </footer>
 
