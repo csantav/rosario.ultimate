@@ -5,74 +5,87 @@
 <!DOCTYPE html>
 <title>Rosario Ultimate - Homepage</title>
 <meta charset="utf-8" />
-<%= stylesheet_link_tag    "elegant-press", :media => "screen" %>
-<%= javascript_include_tag "elegant-press" %>
-<%= csrf_meta_tags %>
+<%= stylesheet_link_tag "elegant-press", :media => "screen" %> 
+<%=javascript_include_tag "elegant-press" %> 
+<%= javascript_include_tag'application' %> <%= csrf_meta_tags %>
 <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
 </head>
 <body>
-<div class="main-container">
-  <header>
-    <h1><a href="#">Rosario Ultimate</a></h1>
-    <p id="tagline"><strong>the art of frisbee :)</strong></p>
-  </header>
-</div>
-<div class="main-container">
-  <div id="sub-headline">
-    <div class="tagline_left"><p id="tagline2">Mail: <a href="mailto:email@website.com">info@rosario-ultimate.com.ar</a></p></div>
-    <div class="tagline_right">
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Site Search</legend>
-          <input type="text" value="Search Our Website&hellip;"   onfocus="if (this.value == 'Search Our Website&hellip;') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search Our Website&hellip;';}" />
-          <input type="submit" name="go" id="go" value="Search" />
-        </fieldset>
-      </form>
-    </div>
-    <br class="clear" />
+  <div class="main-container">
+    <header>
+      <h1>
+        <a href="/">Rosario Ultimate</a>
+      </h1>
+      <p id="tagline">
+        <strong>the art of frisbee :)</strong>
+      </p>
+    </header>
   </div>
-</div>
-<div class="main-container">
-  <div id="nav-container">
-   <nav> 
-    <ul class="nav">
-      <li class="active"><a href="#">Homepage</a></li>
-      <li><a href="#">about us</a></li>
-      <li><a href="#">frisbee</a>
-        <ul>
-          <li><a href="#">ultimate</a>
-          <ul>
-          <li><a href="#">rules</a>
-          </li>
-          </ul>
-          <li><a href="#">freestyle</a></li>
-        </ul>
-      </li>
-      <li><a href="#">training</a></li>
-      <li><a href="#">find us</a></li>
-      <li><a href="#">gallerie</a></li>
-      <li class="last">Other</a></li>
-    </ul>
-   </nav> 
-    <div class="clear"></div>
-  </div>
-</div>
-<div class="flash" style='margin-left: 50%'>
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
- </div>
- 
-<%= content_for?(:content) ? yield(:content) : yield %>
+  <div class="main-container">
+    <div id="sub-headline">
+      <div class="tagline_left">
+        <p id="tagline2">
+          Mail: <a href="mailto:email@website.com">info@rosario-ultimate.com.ar</a>
+          <%= render partial: 'layouts/signup' %>
+        </p>
+      </div>
 
-<footer>
-    <p class="tagline_left">Copyright &copy; 2011 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <!-- <p class="tagline_right">Design by <a href="http://www.priteshgupta.com/" title="Pritesh Gupta" target="_blank" >PriteshGupta.com</a></p> -->
+      <div class="tagline_right">
+        <form action="/" method="post">
+          <fieldset>
+            <legend>Site Search</legend>
+            <input type="text" placeholder="Search Our Website&hellip;"
+              onfocus="if (this.value == 'Search Our Website&hellip;') {this.value = '';}"
+              onblur="if (this.value == '') {this.value = 'Search Our Website&hellip;';}" />
+            <input type="submit" name="go" id="go" value="Search" />
+          </fieldset>
+        </form>
+      </div>
+      <br class="clear" />
+    </div>
+  </div>
+  <div class="main-container">
+    <div id="nav-container">
+      <nav>
+        <ul class="nav">
+          <li class="active"><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'about us', '/' %></li>
+          <li><%= link_to 'frisbee', '/' %>
+            <ul>
+              <li><%= link_to 'Ultimate', '/' %>
+              <ul>
+                <li><%= link_to 'rules', '/' %></li>
+              </ul>
+              </li>
+              <li><%= link_to 'freestyle', '/' %></li>
+            </ul>
+          </li>
+          <li><%= link_to 'training', '/' %></li>
+          <li><%= link_to 'find us', '/' %></li>
+          <li><%= link_to 'Gallery', gallery_path %></li>
+          <li class="last"><%= link_to 'Blog', '/' %></li>
+        </ul>
+      </nav>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="flash" style='margin-left: 50%'>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+  <div class="main-container"><%= content_for?(:content) ?
+    yield(:content) : yield %></div>
+  <footer>
+    <p class="tagline_left">
+      Copyright &copy; 2011 - All Rights Reserved - <a href="#">rosario-ultimate.com.ar</a>
+    </p>
+    <p class="tagline_right">Design by <a href="http://www.priteshgupta.com/" title="Pritesh Gupta" target="_blank" >PriteshGupta.com</a></p>
     <br class="clear" />
   </footer>
 
-<br />
-<br />
+  <br />
+  <br />
 
-    </body>
+</body>
 </html>
-

@@ -82,9 +82,9 @@ blockquote:before,blockquote:after,q:before,q:after {
 
 @font-face {
 	font-family: 'ChunkFive Regular';
-	src: url('fonts/Chunkfive.eot');
+	src: url('Chunkfive.eot');
 	src: local('ChunkFive Regular'), local('ChunkFive'),
-		url('fonts/Chunkfive.woff') format('woff'), url('fonts/Chunkfive.otf')
+		url('../fonts/Chunkfive.woff') format('woff'), url('../fonts/Chunkfive.otf')
 		format('opentype')
 }
 
@@ -93,8 +93,8 @@ blockquote:before,blockquote:after,q:before,q:after {
 	font-style: normal;
 	font-weight: normal;
 	src: local('Artifika Medium'), local('Artifika-Medium'),
-		url('fonts/Artifika-Regular.woff') format('woff'),
-		url('fonts/Artifika-Regular.ttf') format('truetype')
+		url('../fonts/Artifika-Regular.woff') format('woff'),
+		url('../fonts/Artifika-Regular.ttf') format('truetype')
 }
 
 body {
@@ -257,8 +257,8 @@ header h1 a {
 	-o-transform: scale(1.1) translateZ(0);
 	-ms-transform: scale(1.1) translateZ(0);
 	transform: scale(1.1) translateZ(0)
-}*/
-
+}
+*/
 header p {
 	margin-top: -20px;
 	font-size: 20px
@@ -1307,8 +1307,10 @@ table tbody tr.dark {
 #home_featured21 .block {
 	display: inline;
 	float: left;
-	width: 280px;
-	margin: 0 30px 0 0;
+	width: 265px;
+	height: 250px;
+	overflow: hidden;
+	margin: 0 35px 0 0;
 	padding: 0
 }
 

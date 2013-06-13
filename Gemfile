@@ -42,5 +42,7 @@ gem 'devise'
 gem 'cancan'
 group :development, :test do
 	gem 'rspec-rails', '~>2.0'
+	gem 'pry'
+gem 'faker'
 end
 
