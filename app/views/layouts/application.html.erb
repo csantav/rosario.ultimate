@@ -6,8 +6,9 @@
 <title>Rosario Ultimate - Homepage</title>
 <meta charset="utf-8" />
 <%= stylesheet_link_tag "elegant-press", :media => "screen" %> 
-<%=javascript_include_tag "elegant-press" %> 
-<%= javascript_include_tag'application' %> <%= csrf_meta_tags %>
+<%= javascript_include_tag "elegant-press" %> 
+<%= javascript_include_tag'application' %> 
+<%= csrf_meta_tags %>
 <!--[if IE]><style>#header h1 a:hover{font-size:75px;}</style><![endif]-->
 </head>
 <body>
@@ -48,9 +49,9 @@
     <div id="nav-container">
       <nav>
         <ul class="nav">
-          <li class="active"><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'about us', '/' %></li>
-          <li><%= link_to 'frisbee', '/' %>
+          <%= nav_active_link_helper('home', root_path,{ controller: 'home'}) %></li> 
+          <%= nav_active_link_helper('about us', about_us_page_index_path,{ action: 'about_us', controller: 'page'}) %></li>
+          <%= nav_active_link_helper('frisbee','/') %>
             <ul>
               <li><%= link_to 'Ultimate', '/' %>
               <ul>
@@ -60,9 +61,10 @@
               <li><%= link_to 'freestyle', '/' %></li>
             </ul>
           </li>
-          <li><%= link_to 'training', '/' %></li>
-          <li><%= link_to 'find us', '/' %></li>
-          <li><%= link_to 'Gallery', gallery_path %></li>
+          <%= nav_active_link_helper('find us', find_us_page_index_path,{ action: 'find_us', controller: 'page'}) %></li>
+          <%= nav_active_link_helper('training', training_page_index_path,{ action: 'training', controller: 'page'}) %></li>
+          <%= nav_active_link_helper('gallery', gallery_path, {controller: 'gallery'}) %></li>
+          <%= nav_active_link_helper('Tournament', '/') %></li>
           <li class="last"><%= link_to 'Blog', '/' %></li>
         </ul>
       </nav>
@@ -73,9 +75,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </div>
-
-  <div class="main-container"><%= content_for?(:content) ?
-    yield(:content) : yield %></div>
+  <div class="main-container"><%= content_for?(:content) ? yield(:content) : yield %>
+  </div>
   <footer>
     <p class="tagline_left">
       Copyright &copy; 2011 - All Rights Reserved - <a href="#">rosario-ultimate.com.ar</a>

@@ -1,7 +1,20 @@
 Frisbee::Application.routes.draw do
   devise_for :users
 
+  resources :page do
+    collection do
+      get 'find_us'
+      get 'about_us'
+      get 'training'
+    end
+  end
   get 'gallery' => 'gallery#index', as: 'gallery'
+
+  # get 'page/about_us' => 'page#about_us', as: 'about_us'
+
+  # get 'page/find_us' => 'page#find_us', as: 'find_us'
+  # get 'page/training' => 'page#training', as: 'training'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

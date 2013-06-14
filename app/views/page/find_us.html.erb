@@ -1,0 +1,28 @@
+<div class="container1">
+			
+			
+
+			<div class="box">
+				<h1><%= @page.name %></h1>
+				<p>
+				<div>
+					<div id="header1">
+						<h2>
+							<a href="index.html"><%= @page.header %></a>
+						</h2>
+						<br>
+						<p id="tagline1">
+							<strong>Header Tagline</strong>
+						</p>
+						<br>
+					</div>
+				
+				<div class="clear"></div>
+				<%= @page.content.html_safe %>
+				<br />
+
+				<div class="clear"></div>
+			</div>
+
+
+		</div>
