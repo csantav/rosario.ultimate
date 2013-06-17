@@ -1,0 +1,2 @@
+module Admin::UserpanelHelper
+end

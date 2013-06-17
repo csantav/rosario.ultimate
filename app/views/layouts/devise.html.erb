@@ -1,10 +1,14 @@
 <%= content_for :content do %>
 <div class="container1">
+<div class="box">
 <%= yield %>
+</div>
 </div>
 <div class="container1">
 <!-- TODO: Disable for Users -->
-<%= 'Moderator options' %>
+<% if can? :manage, User %>
+<%= link_to 'Userpanel' , admin_userpanel_index_path %>
+<% end %>
 </div>
 <% end %>
 <%= render template: 'layouts/application' %>

@@ -13,4 +13,14 @@ module ApplicationHelper
 		html += link_to(link_name, path)
 		html.html_safe
 	end
+
+	def print_params
+		html = "<div id='params'>"
+		params.each do |param|
+			html += "<p> " + param.inspect + "</p>"
+		end
+		html += "</div>"
+		html.html_safe
+
+	end
 end

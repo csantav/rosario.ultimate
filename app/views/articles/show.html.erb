@@ -1,0 +1,12 @@
+
+	<div class="box">
+
+		<% if can? :update, Article %>
+		<%= link_to 'edit' ,edit_article_path %>
+		<% end %>
+		
+		<p class="tagline"><strong><%= @article.title %></strong></p> <br>
+		<div class="content"><%= @article.content.html_safe %></div>
+		<div class="clear"></div>
+	</div>
+

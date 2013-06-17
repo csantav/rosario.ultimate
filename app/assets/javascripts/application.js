@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= eletant-press
+//= jquery.dotdotdot-1.5.9
 //= require_tree .

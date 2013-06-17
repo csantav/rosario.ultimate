@@ -1,12 +1,11 @@
 <%= content_for :content do %>
-	<%= yield %>
-<% if can? :manage, Page %>
-<div class="container1">
-<!-- TODO: Disable for Users -->
 
-<%= 'Moderator options' %>
+<div class="container1">
+
+<%= yield %>
 
 </div>
+
 <% end %>
-<% end %>
+
 <%= render template: 'layouts/application' %>

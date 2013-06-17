@@ -1,0 +1,25 @@
+<h2>User Listing</h2>
+<%= print_params %>
+<table style='border: none'>
+	<tr style ='text-align: border: none'>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Role</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.id %></td>
+		<td><%= user.name %></td>
+		<td><%= user.email %></td>
+		<td><% user.roles.map do |role| %>
+			<%= role.name %>
+			<% end %>
+		</td>
+		<td><%= link_to 'edit', edit_admin_userpanel_path(user) %></td>
+		<td><%= link_to 'delete', admin_userpanel_path(user), method: 'delete' %></td>
+	</tr>
+	<% end %>
+</table>

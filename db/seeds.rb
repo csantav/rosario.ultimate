@@ -6,12 +6,35 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+#mandatory seeds
+# Roles, Admin user
+
+
+
+
+User.all.each do |user|
+	user.roles.delete_all
+end
+
+User.delete_all
+Role.delete_all
+
+
+
 Role.delete_all
 Role.create(name: 'admin')
 Role.create(name: 'moderator')
 Role.create(name: 'user')
 
-User.delete_all
+admin = User.new
+admin.name = 'Borja'
+admin.email = 'csanta.v@gmx.net'
+admin.addRole('admin')
+admin.password = 'qwe'
+admin.save
+
+=begin
 3.times do |i|
 	a = User.new
 	i = i.to_s
@@ -19,19 +42,35 @@ User.delete_all
 	a.save
 end
 
-r = Role.find_by_name('admin')
-r.users << User.first
-r = Role.find_by_name('moderator')
-r.users << User.find(User.first.id+1)
-r = Role.find_by_name('user')
-r.users << User.last
+def nextUser(id)
+	return User.find(id +1)
+	
+end
 
-r.save
+def addTheRole(user, role)
+	user.addRole role
+end
+
+user = User.first
+role = Role.find_by_name('admin')
+
+addTheRole user, role
+
+role = Role.find_by_name('moderator')
+user = nextUser user.id
+
+addTheRole user, role
+
+role = Role.find_by_name('user')
+user = nextUser user.id
+
+addTheRole user, role
+# r.save
 
 # Add Pseudo Artikles
 Article.delete_all
 3.times do 
-Article.create(title: Faker::Company.bs, content: Faker::Lorem.paragraphs(rand(1..5)).join('<br />').html_safe, user_id: User.first.id)
+Article.create(title: Faker::Company.bs, content: Faker::Lorem.paragraphs(rand(4..10)).join('<br />').html_safe, user_id: User.first.id)
 end
 
 
@@ -78,4 +117,5 @@ Page.create(name: 'find us', header: Faker::Lorem.paragraphs(1).join('<br />').h
 
 
 
+=end
 

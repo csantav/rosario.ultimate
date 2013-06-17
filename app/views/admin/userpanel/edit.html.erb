@@ -1,0 +1,24 @@
+<h2>Edit <%= @user.name %></h2>
+
+<%= form_for(@user, :url => admin_userpanel_path, :html => { :method => :put }) do |f| %>
+
+  <div><%= f.label :name %><br />
+  <%= f.email_field :name %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+
+  <div>
+  	<%= label_tag 'admin' %>
+	<%= check_box_tag 'admin', 'admin',  checked = @role_admin %> <br>
+	<%= label_tag 'moderator' %>
+	<%= check_box_tag 'moderator','moderator' , checked = @role_moderator%>
+   <br>
+  <br>
+
+  <div><%= f.submit "update" %></div>
+<% end %>
+<p><%= button_to "Delete account", admin_userpanel_path(@user), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<%= link_to "Back", :back %>

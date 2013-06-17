@@ -36,131 +36,27 @@
 
   <article class="box" id="home_featured21">
     <% @articles.each do |article| %>
+   <!--  <div class="block">
+    <div class="header ellipsis"><h2><%= article.title %></h2></div>
+    div.article.
+      <p class="ellipsis multiline">
+      <%= article.content.html_safe %>
+      </p>
+    </div> -->
+    <%= link_to article_path(article) do %>
     <div class="block">
-      <h2><%= article.title %></h2>
-      <p><%= article.content.html_safe %></p>
-    </div>
+        <div class="boxheader ellipsis"><h2><%= article.title %></h2></div>
+        <div class="boxcontent ellipsis"><p><%= article.content.html_safe %></p></div> 
+      </div>
+    
+    <% end %>
     <% end %>
     <div class="clear"></div>
-    <!--  <div class="block"><h2>Who Are We</h2>
-        <p>Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur. Dapiensociis temper donec auctortortis cumsan et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.<br />
-<a href="#" class="read_more">Read More</a> 
-</p>
-      </div>
-      <div class="block"><h2>Compatibility</h2>
-        <ul id="list">
-        <li>Dapiensociis temper donec auctortortis cumsan et curabitur.</li>
-        <li>Condis lorem loborttis leo.</li>
-        <li>Portortornec condimenterdum eget consectetuer condis.</li>
-        <li>Puruselit mauris nulla hendimentesque elit semper nam a sapien urna sempus.</li>
-        </ul>
-<br />
-<br />
-      <%= image_tag 'template/browsers.png' %>
-
-      </div>
-      <div class="block last"><h2>What We Do</h2>
-        <p>Temperinte interdum sempus odio urna eget curabitur semper convallis nunc laoreet. Nullain convallis ris elis vest liberos nis diculis feugiat in rutrum. Suspendreristibulumfaucibulum lobortor quis tortortor ris sapien sce enim et volutpat sus. Urnaretiumorci orci fauctor leo justo nulla cras ridiculum eu id vitae. <br />
-<a href="#" class="read_more">Read More</a></p>
-      </div>
-      <div class="clear"></div> -->
+    
+    <div class="read_more">read more</div> 
   </article>
-
+ 
 </div>
 
-<!-- <div class="callout"> 
-    <div class="calloutcontainer"> 
-        <div class="container_12"> 
-            <div class="grid"> 
-                <div class="alignleft">
-                    <h3>Like it?  Download it for free!</h3> 
-                    <p>At <a href="http://www.priteshgupta.com/templates/elegant-press">http://www.priteshgupta.com/templates/elegant-press</a></p> 
-                </div> 
-        <a href="http://www.priteshgupta.com/templates/elegant-press/" class="more" target="_blank">Download</a>
-            </div> 
-            <div class="clear"></div> 
-        </div> 
-        <div class="calloutoverlay"></div> 
-        <div class="calloutoverlaybottom"></div> 
-    </div> 
-</div>  -->
-<!-- <br /><br />
 
-     <div class="container2">
-     <article id="home_featured2">
-      <ul>
-        <li>
-          <div class="imgholder"><a href="template/slide1.jpg" data-gal="prettyPhoto[featured]" title="First Featured Title"><%= image_tag 'template/featured1.jpg' %></a></div>
-          <h4>First Featured Title</h4>
-          <p>Orciint erdum condimen terdum nulla mcorper elit nam curabitur laoreet met prae senean et iac ulum. Metridiculis cons eque quis iaculum aenean nunc aenean.</p>
-        </li>
-        <li>
-          <div class="imgholder"><a href="template/slide2.jpg" data-gal="prettyPhoto[featured]" title="Second Featured Title"><%= image_tag 'template/featured2.jpg' %></a></div>
-          <h4>Second Featured Title</h4>
-          <p>Orciint erdum condimen terdum nulla mcorper elit nam curabitur laoreet met prae senean et iac ulum. Metridiculis cons eque quis iaculum aenean nunc aenean.</p>
-        </li>
-        <li class="last">
-          <div class="imgholder"><a href="template/slide3.jpg" data-gal="prettyPhoto[featured]" title="Third Featured Title"><%= image_tag 'template/featured3.jpg' %></a></div>
-          <h4>Third Featured Title</h4>
-          <p>Orciint erdum condimen terdum nulla mcorper elit nam curabitur laoreet met prae senean et iac ulum. Metridiculis cons eque quis iaculum aenean nunc aenean.</p>
-        </li>
-      </ul>
-      <br class="clear" />
-    </article>
-  </div>
-</div> -->
-<div class="main-container"></div>
-
-<div class="callout">
-  <div class="calloutcontainer">
-    <div class="container_12">
-      <div class="grid">
-        <article class="footbox">
-          <h2>From The Blog</h2>
-          <ul>
-            <li><a href="#">Lorem Ipsum Dolor</a><br /> Orciint erdum
-              condimen terdum nulla mcorper elit nam curabitur...</li>
-            <li><a href="#">Praesent Et Eros</a><br /> Orciint erdum
-              condimen terdum nulla mcorper elit nam curabitur...</li>
-            <li><a href="#">Suspendisse In Neque</a><br /> Orciint erdum
-              condimen terdum nulla mcorper elit nam curabitur...</li>
-          </ul>
-        </article>
-        <article class="footbox last">
-          <h2>We Are Social!</h2>
-          <div id="social">
-            <a href="http://twitter.com/priteshgupta" class="s3d twitter">
-              Twitter <span class="icons twitter"></span>
-            </a> <a href="http://www.facebook.com/priteshgupta"
-              class="s3d facebook"> Facebook <span class="icons facebook"></span>
-            </a> <a href="http://forrst.com/people/priteshgupta"
-              class="s3d forrst"> Forrst <span class="icons forrst"></span>
-            </a> <a href="http://www.flickr.com/photos/priteshgupta"
-              class="s3d flickr"> Flickr <span class="icons flickr"></span>
-            </a> <a href="#" class="s3d designmoo"> Designmoo <span
-              class="icons designmoo"></span>
-            </a>
-          </div>
-        </article>
-        <article class="latestgallery">
-          <h2>Latest Work</h2>
-          <ul>
-            <li><a href="template/thumb.jpg"
-              data-gal="prettyPhoto[gallery]" title="Title"><%= image_tag 'template/thumb.jpg', width: 150, height: 95 %></a></li>
-            <li><a href="template/thumb2.jpg"
-              data-gal="prettyPhoto[gallery]" title="Title"><%= image_tag 'template/thumb2.jpg', width: 150, height: 95 %></a></li>
-            <li><a href="template/thumb3.jpg"
-              data-gal="prettyPhoto[gallery]" title="Title"><%= image_tag 'template/thumb3.jpg', width: 150, height: 95 %></a></li>
-            <li><a href="template/thumb4.jpg"
-              data-gal="prettyPhoto[gallery]" title="Title"><%= image_tag 'template/thumb4.jpg', width: 150, height: 95 %></a></li>
-          </ul>
-        </article>
-
-        <div class="clear"></div>
-      </div>
-      <div class="calloutoverlay"></div>
-      <div class="calloutoverlaybottom"></div>
-    </div>
-  </div>
-</div>
   <% end %> <%= render template: 'layouts/application' %>
