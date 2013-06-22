@@ -1,12 +1,18 @@
 <%= content_for :content do %>
-	<%= yield %>
+<div class="container1">
+	<div class="box">
+		<%= yield %>
+	</div>
+</div>
+
+
+
 <% if can? :manage, Page %>
 <div class="container1">
 <!-- TODO: Disable for Users -->
-
-<%= 'Moderator options' %>
-
+# <%= link_to 'edit', edit_page_path(@page) %> 
 </div>
-<% end %>
+
+	<% end %>
 <% end %>
 <%= render template: 'layouts/application' %>

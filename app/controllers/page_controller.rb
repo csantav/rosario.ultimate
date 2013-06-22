@@ -4,18 +4,43 @@ class PageController < ApplicationController
 	end
 
 	def about_us
-		getContent('about us')
+		@page = getContent('about us')
 	end
 
 	def find_us
-		getContent('find us')
+		@page = getContent('find us')
 	end
 
 	def training
-		getContent('training')
+		@page = getContent('training')
 	end
 
 	def getContent(name)
 		@page = Page.find_by_name(name)	
+	end
+
+	def show
+		
+	end
+
+	def edit
+		@page = Page.find(params[:id])	
+	end
+
+	def update
+		@page = Page.find(params[:id])
+		unless @page.update_attributes(params[:page])
+			@page.error = 'Page could not be saved'
+			redirect_to edit_page_path(@page)
+		else
+			render 'show'	
+		end
+	end
+
+	def destroy
+		
+	end
+
+	def create	
 	end
 end

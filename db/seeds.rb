@@ -34,7 +34,7 @@ admin.addRole('admin')
 admin.password = 'qwe'
 admin.save
 
-=begin
+
 3.times do |i|
 	a = User.new
 	i = i.to_s
@@ -117,5 +117,5 @@ Page.create(name: 'find us', header: Faker::Lorem.paragraphs(1).join('<br />').h
 
 
 
-=end
+
 

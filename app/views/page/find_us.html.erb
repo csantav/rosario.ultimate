@@ -1,12 +1,10 @@
-<div class="container1">
-	<div class="box">
-	<% if @page %>
+<% if @page %>
 		<h1><%= @page.name %></h1>
 		<p>
 		<div>
 			<div id="header1">
 				<h2>
-					<a href="index.html"><%= @page.header %></a>
+					<a href="index.html"><%= @page.header.html_safe %></a>
 				</h2>
 				<br>
 				<p id="tagline1">
@@ -20,7 +18,7 @@
 		<br />
 
 		<div class="clear"></div>
-		<% end %>
+<% end %>
 	</div>
 
 

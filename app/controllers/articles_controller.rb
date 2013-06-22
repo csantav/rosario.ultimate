@@ -23,10 +23,12 @@ load_and_authorize_resource # initalizes all need members '@article(s)'
 	def update
 		@article = params[:article]
 
-		Article.find(params[:id]).update_attributes(@article)
-
-		redirect_to @article
-
+		if Article.find(params[:id]).update_attributes(@article)
+			redirect_to @article
+		else
+			flash[:error] = 'Article could not be saved'
+			redirect_to edit_article_path @article
+		end
 	end
 
 	def show
@@ -34,11 +36,14 @@ load_and_authorize_resource # initalizes all need members '@article(s)'
 	end
 
 	def destroy
-		
+		@article = Article.find(params[:id])
+		@article.delete
+
+		redirect_to articles_path	
 	end
 
 	def index
-		@articles = Article.all
+		@articles = Article.order('created_at DESC')
 		authorize! :read, Article
 		# @articles = Article.all	
 	end

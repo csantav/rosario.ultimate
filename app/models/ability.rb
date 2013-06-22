@@ -10,7 +10,8 @@ class Ability
     elsif user.role? :moderator
       can :manage, [ Article, Page]
     elsif user.role? :user
-      can :show, [Article, Page]
+      can :read, [Article, Page]
+      can :summarize, Article
       # can :read, [Article, Page]
 
       # manage products, assets he owns

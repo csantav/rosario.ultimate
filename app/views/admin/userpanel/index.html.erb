@@ -19,7 +19,7 @@
 			<% end %>
 		</td>
 		<td><%= link_to 'edit', edit_admin_userpanel_path(user) %></td>
-		<td><%= link_to 'delete', admin_userpanel_path(user), method: 'delete' %></td>
+		<td><%= link_to 'delete', admin_userpanel_path(user), method: 'delete' , confirm: 'are you sure? ' %></td>
 	</tr>
 	<% end %>
 </table>

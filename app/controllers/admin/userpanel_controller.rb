@@ -31,9 +31,10 @@ class Admin::UserpanelController < ApplicationController
 		@user.addRole(params[:moderator])
 		@user.addRole('user')
 
-		@user = User.find(params[:id])
+		# @user = User.find(params[:id])
 
-		render 'show'
+		# render 'show'
+		redirect_to admin_userpanel_index_path
 		# redirect_to admin_userpanel_path(@user)
 	end
 

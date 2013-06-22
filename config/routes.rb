@@ -8,12 +8,11 @@ Frisbee::Application.routes.draw do
       get 'training'
     end
   end
-resources :articles
-  # resources :article do
-    # collection do
-    #   get 'summarize'
-    # end
-  # end
+  resources :articles do
+    collection do
+      get 'summarize'
+    end
+  end
   
   namespace 'admin' do
     resources :userpanel#, only: [:index, :show, :destroy, :edit, :update]

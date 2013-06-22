@@ -2,19 +2,19 @@
 <div class="container1">
   <div id="mySlides">
     <div id="slide1">
-      <%= image_tag 'template/slider1.png' %> <span><b
+      <%= image_tag 'template/slider2.png' %> <span><b
         class="slideheading">First Featured Slide</b><br />Featured
         Text.....<a href="#" title="Coolness" class="readmore">Read
           More!</a></span>
     </div>
     <div id="slide2">
-      <%= image_tag 'template/slider2.png' %> <span><b
+      <%= image_tag 'template/slider3.png' %> <span><b
         class="slideheading">Second Featured Slide</b><br />Featured
         Text.....<a href="#" title="Coolness" class="readmore">Read
           More!</a></span>
     </div>
     <div id="slide3">
-      <%= image_tag 'template/slider3.png' %> <span><b
+      <%= image_tag 'template/slider1.png' %> <span><b
         class="slideheading">Third Featured Slide</b><br />Featured
         Text.....<a href="#" title="Coolness" class="readmore">Read
           More!</a></span>
@@ -36,13 +36,7 @@
 
   <article class="box" id="home_featured21">
     <% @articles.each do |article| %>
-   <!--  <div class="block">
-    <div class="header ellipsis"><h2><%= article.title %></h2></div>
-    div.article.
-      <p class="ellipsis multiline">
-      <%= article.content.html_safe %>
-      </p>
-    </div> -->
+   
     <%= link_to article_path(article) do %>
     <div class="block">
         <div class="boxheader ellipsis"><h2><%= article.title %></h2></div>
@@ -53,7 +47,7 @@
     <% end %>
     <div class="clear"></div>
     
-    <div class="read_more">read more</div> 
+    <div class="read_more"><%= link_to 'read more' , articles_path %></div> 
   </article>
  
 </div>
