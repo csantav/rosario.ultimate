@@ -6,12 +6,13 @@ load_and_authorize_resource # initalizes all need members '@article(s)'
 	end
 
 	def create
-		@article = params[:article]
-		unless Article.create(@article)
+		@article = Article.create(params[:article])
+		
+		unless @article.save
 			flash[:error] = " Article could not be saved"
 			render 'new'
 		else
-			redirect_to @article
+			redirect_to articles_path
 		end
 
 	end

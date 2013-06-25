@@ -40,7 +40,7 @@
     <%= link_to article_path(article) do %>
     <div class="block">
         <div class="boxheader ellipsis"><h2><%= article.title %></h2></div>
-        <div class="boxcontent ellipsis"><p><%= article.content.html_safe %></p></div> 
+        <div class="boxcontent ellipsis"><p><%= article.updated_at.to_s(:arg_time_format) %> <br><%= article.content.html_safe %></p></div> 
       </div>
     
     <% end %>
